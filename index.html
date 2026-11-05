@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>Diya Run</title>
+  <meta name="description" content="Keep the flame alive. Dodge the rain, catch the oil.">
+  <meta name="theme-color" content="#120a1f">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="game" aria-label="Diya Run game area"></canvas>
+
+  <div id="hud" hidden>
+    <div class="score"><span id="score">0</span></div>
+    <div class="fuel"><div id="fuel-bar"></div></div>
+    <button id="pause-btn" class="icon-btn" aria-label="Pause">II</button>
+  </div>
+
+  <section id="menu" class="overlay">
+    <h1>Diya Run</h1>
+    <p class="tag">Keep the flame alive.</p>
+    <ul class="how">
+      <li><b>Move:</b> drag or tap · ← → or A D</li>
+      <li><b>Dodge</b> the rain · <b>catch</b> the oil</li>
+      <li>Your fuel burns down — oil refills it</li>
+    </ul>
+    <button id="play-btn" class="btn">Play</button>
+    <p class="best">Best: <span id="best">0</span></p>
+    <button id="install-btn" class="btn ghost" hidden>Install app</button>
+    <button id="mute-btn" class="btn ghost small">Sound: on</button>
+  </section>
+
+  <section id="paused" class="overlay" hidden>
+    <h2>Paused</h2>
+    <button id="resume-btn" class="btn">Resume</button>
+    <button id="quit-btn" class="btn ghost">Menu</button>
+  </section>
+
+  <section id="over" class="overlay" hidden>
+    <h2 id="over-title">The flame went out</h2>
+    <p class="final">Score <span id="final-score">0</span></p>
+    <p class="best">Best: <span id="best-over">0</span></p>
+    <button id="retry-btn" class="btn">Play again</button>
+    <button id="menu-btn" class="btn ghost">Menu</button>
+  </section>
+
+  <script src="game.js"></script>
+</body>
+</html>
